@@ -3,26 +3,35 @@ import { withRouter } from "react-router-dom";
 import firebase from "./firebase";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-class Login extends Component {
+class Register extends Component {
   state = {
     email: "",
     password: "",
-    error: null,
-    user: ""
+    isAdmin: false,
+    cart: 0,
+    error: null
   };
+
   handleInputChange = event => {
     this.setState({ [event.target.name]: event.target.value });
   };
+
   handleSubmit = event => {
     event.preventDefault();
-    const { email, password } = this.state;
+    const itemsRef = firebase.database().ref("users");
+    const items = {
+      email: this.state.email,
+      password: this.state.password,
+      isAdmin: this.state.isAdmin,
+      cart: this.state.cart
+    };
+    // alert(items);
     firebase
       .auth()
-      .signInWithEmailAndPassword(email, password)
+      .createUserWithEmailAndPassword(this.state.email, this.state.password)
       .then(user => {
-        this.props.history.push({
-          pathname: "/"
-        });
+        itemsRef.push(items);
+        this.props.history.push("/");
       })
       .catch(error => {
         this.setState({ error: error });
@@ -32,7 +41,7 @@ class Login extends Component {
     const { email, password, error } = this.state;
     return (
       <div className="login-container">
-        <div className="title">Log In</div>
+        <div className="title">Sign up</div>
 
         <div className="forms-1">
           <form className="forms">
@@ -65,7 +74,7 @@ class Login extends Component {
               variant="contained"
               color="primary"
               className="submit"
-              children="Log In"
+              children="Sign Up"
               onClick={this.handleSubmit}
             />
           </form>
@@ -74,4 +83,5 @@ class Login extends Component {
     );
   }
 }
-export default withRouter(Login);
+
+export default withRouter(Register);

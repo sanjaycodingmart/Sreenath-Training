@@ -1,15 +1,16 @@
 import firebase from "firebase";
-import "firebase/storage";
 
 const config = {
-  apiKey: "AIzaSyACRp3yUFm81W_LSgAv3mVd38RMlMHIZIo",
-  authDomain: "movie-94ede.firebaseapp.com",
-  databaseURL: "https://movie-94ede.firebaseio.com",
-  projectId: "movie-94ede",
-  storageBucket: "movie-94ede.appspot.com",
-  messagingSenderId: "959975355267",
-  appId: "1:959975355267:web:71f0980b8d2d0f954cfcb6",
-  measurementId: "G-W9XWETX8J4"
+  apiKey: "AIzaSyCHSwEoWO9euJQJln9JJsLCEesEduhiCV0",
+  authDomain: "trolleybag-b5e9f.firebaseapp.com",
+  databaseURL: "https://trolleybag-b5e9f.firebaseio.com",
+  projectId: "trolleybag-b5e9f",
+  storageBucket: "trolleybag-b5e9f.appspot.com",
+  messagingSenderId: "72170775422",
+  appId: "1:72170775422:web:edd50b51010acdbe55c92f",
+  measurementId: "G-Q1355PJVD0"
 };
+
 firebase.initializeApp(config);
+
 export default firebase;

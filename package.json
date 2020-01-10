@@ -1,17 +1,23 @@
 {
-  "name": "movie",
+  "name": "trolleybag",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.8.3",
+    "@material-ui/icons": "^4.5.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.0",
     "@testing-library/user-event": "^7.2.1",
     "firebase": "^7.6.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-image": "^2.2.2",
+    "react-lazyload": "^2.6.5",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.3.0",
-    "rebass": "^4.0.7"
+    "react-slideshow-image": "^1.3.3",
+    "react-toastify": "^5.5.0",
+    "recompose": "^0.30.0"
   },
   "scripts": {
     "start": "react-scripts start",
