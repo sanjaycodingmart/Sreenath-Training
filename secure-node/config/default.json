@@ -1,0 +1,5 @@
+{
+  "jwtPrivateKey": "nodeauthsecret",
+  "port": "8000",
+  "requiresAuth": true
+}
