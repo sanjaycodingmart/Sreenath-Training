@@ -1,0 +1,36 @@
+const express = require("express");
+const signup = require("../routes/signup");
+const signin = require("../routes/signin");
+const plus = require("../routes/plus");
+const advertisement = require("../routes/advertisement");
+const product = require("../routes/product");
+const seller = require("../routes/seller");
+const order = require("../routes/order");
+const mail = require("../routes/mail");
+const notifyItem = require("../routes/notifyItem");
+const cartItem = require("../routes/cartItem");
+const favItem = require("../routes/favItem");
+const upload = require("../routes/upload");
+const payment = require("../routes/payment");
+const returns = require("../routes/returns");
+const chat = require("../routes/chat");
+
+module.exports = function(app) {
+  app.use(express.json());
+  app.use(express.urlencoded({ extended: true }));
+  app.use("/api/signup", signup);
+  app.use("/api/signin", signin);
+  app.use("/api/upload", upload);
+  app.use("/api/advertisement", advertisement);
+  app.use("/api/plus", plus);
+  app.use("/api/product", product);
+  app.use("/api/seller", seller);
+  app.use("/api/order", order);
+  app.use("/api/returns", returns);
+  app.use("/api/mail", mail);
+  app.use("/api/payment", payment);
+  app.use("/api/notifyItem", notifyItem);
+  app.use("/api/cartItem", cartItem);
+  app.use("/api/favItem", favItem);
+  app.use("/api/chat", chat);
+};
